@@ -24,7 +24,3 @@ Route::resource('listing', 'ListingsController');
 Route::get('/user/dashboard', function () {
   return view('User.dashboard.home');
 })->name('dashboard');
-
-Route::get('/user/listings/create', function () {
-  return view('User.createlistings');
-})->name('dashboard_createListing');

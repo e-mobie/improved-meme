@@ -64,13 +64,13 @@
 						<div class="user-name"><span><img src="{{url('images/dashboard-avatar.jpg')}}" alt=""></span>My Account</div>
 						<ul>
 							<li><a href="dashboard.html"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
-							<li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages</a></li>
+							{{-- <li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages</a></li> --}}
 							<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
 							<li><a href="index.html"><i class="sl sl-icon-power"></i> Logout</a></li>
 						</ul>
 					</div>
 
-					<a href="{{ route('dashboard_createListing') }}" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
+					<a href="{{ route('listing.create') }}" class="button border with-icon">Add Listing <i class="sl sl-icon-plus"></i></a>
 				</div>
 				<!-- Header Widget / End -->
 			</div>
@@ -99,9 +99,9 @@
 
 			<ul data-submenu-title="Main">
 				<li class="active"><a href="{{route('dashboard')}}"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
-				<li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages <span class="nav-tag messages">2</span></a></li>
+				{{-- <li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages <span class="nav-tag messages">2</span></a></li> --}}
 				<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
-				<li><a href="dashboard-wallet.html"><i class="sl sl-icon-wallet"></i> Wallet</a></li>
+				{{-- <li><a href="dashboard-wallet.html"><i class="sl sl-icon-wallet"></i> Wallet</a></li> --}}
 			</ul>
 
 			<ul data-submenu-title="Listings">
@@ -115,7 +115,7 @@
 						<li><a href="dashboard-my-listings.html">Expired <span class="nav-tag red">2</span></a></li>
 					</ul>
 				</li>
-				<li><a href="{{ route('dashboard_createListing')}}"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
+				<li><a href="{{ route('listing.create')}}"><i class="sl sl-icon-plus"></i> Add Listing</a></li>
 			</ul>
 
 			<ul data-submenu-title="Account">
@@ -162,6 +162,7 @@
 <script type="text/javascript" src="{{url('scripts/tooltips.min.js')}}"></script>
 <script type="text/javascript" src="{{url('scripts/custom.js')}}"></script>
 
+@yield('scripts')
 
 </body>
 </html>

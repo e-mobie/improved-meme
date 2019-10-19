@@ -25,6 +25,7 @@ class ListingsController extends Controller
     public function create()
     {
         //
+        return view('User.dashboard.createlistings');
     }
 
     /**
@@ -61,7 +62,7 @@ class ListingsController extends Controller
     public function edit(Listing $listing)
     {
         //
-        return view('User.editListings', compact('listing'));
+        return view('User.dashboard.editlistings', compact('listing'));
     }
 
     /**
