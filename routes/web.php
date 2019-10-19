@@ -22,7 +22,7 @@ Auth::routes();
 Route::resource('listing', 'ListingsController');
 
 Route::get('/user/dashboard', function () {
-  return view('User.dashboard');
+  return view('User.dashboard.home');
 })->name('dashboard');
 
 Route::get('/user/listings/create', function () {
