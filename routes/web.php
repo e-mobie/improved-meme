@@ -15,6 +15,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::resource('listing', 'ListingsController');
+
+Route::get('/user/dashboard', function () {
+  return view('User.dashboard');
+})->name('dashboard');
+
+Route::get('/user/listings/create', function () {
+  return view('User.createlistings');
+})->name('dashboard_createListing');

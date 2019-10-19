@@ -1,11 +1,11 @@
-@extends('Home.layout')
+@extends('layouts.app')
 
 @section('content')
 
 
 <!-- Banner
 ================================================== -->
-<div class="main-search-container centered" data-background-image="images/main-search-background-01.jpg">
+<div class="main-search-container centered" data-background-image="{{ url('images/main-search-background-01.jpg')}}">
 	<div class="main-search-inner">
 
 		<div class="container">
