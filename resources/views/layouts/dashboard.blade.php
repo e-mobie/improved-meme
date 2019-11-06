@@ -61,11 +61,11 @@
 
 					<!-- User Menu -->
 					<div class="user-menu">
-						<div class="user-name"><span><img src="{{url('images/dashboard-avatar.jpg')}}" alt=""></span>My Account</div>
+						<div class="user-name"><span><img src="{{url('images/dashboard-avatar.jpg')}}" alt=""></span>Hi, {{ Auth::user()->name }} !</div>
 						<ul>
 							<li><a href="dashboard.html"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
 							{{-- <li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages</a></li> --}}
-							<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+							{{-- <li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> Bookings</a></li> --}}
 							<li><a href="index.html"><i class="sl sl-icon-power"></i> Logout</a></li>
 						</ul>
 					</div>
@@ -100,7 +100,7 @@
 			<ul data-submenu-title="Main">
 				<li class="active"><a href="{{route('dashboard')}}"><i class="sl sl-icon-settings"></i> Dashboard</a></li>
 				{{-- <li><a href="dashboard-messages.html"><i class="sl sl-icon-envelope-open"></i> Messages <span class="nav-tag messages">2</span></a></li> --}}
-				<li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> Bookings</a></li>
+				{{-- <li><a href="dashboard-bookings.html"><i class="fa fa-calendar-check-o"></i> Bookings</a></li> --}}
 				{{-- <li><a href="dashboard-wallet.html"><i class="sl sl-icon-wallet"></i> Wallet</a></li> --}}
 			</ul>
 
@@ -108,7 +108,7 @@
 				<li><a><i class="sl sl-icon-layers"></i> My Listings</a>
 					<ul>
 						<li>
-							<a href="#">All listings <span class="nav-tag primary">0</span></a>
+							<a href="{{ route('listing.index') }}">All listings <span class="nav-tag primary">{{ count(Auth::user()->Listings) }}</span></a>
 						</li>
 						<li><a href="dashboard-my-listings.html">Active <span class="nav-tag green">6</span></a></li>
 						<li><a href="dashboard-my-listings.html">Pending <span class="nav-tag yellow">1</span></a></li>

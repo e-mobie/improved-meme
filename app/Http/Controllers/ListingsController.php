@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ListingsController extends Controller
 {
@@ -15,6 +16,9 @@ class ListingsController extends Controller
     public function index()
     {
         //
+        $listings = Auth::user()->Listings;
+        
+        return view('User.listings.all', compact('listings'));
     }
 
     /**
@@ -37,7 +41,22 @@ class ListingsController extends Controller
     public function store(Request $request)
     {
         //
-        $listing = Listing::create($request->all());
+        $listing = Auth::user()->Listings()->create($request->validate([
+          'title' => 'required|min:3',
+          'category' => 'required',
+          'keywords' => 'nullable',
+          'city' => 'required|min:5',
+          'state' => 'required|min:2',
+          'address' => 'required|min:5',
+          'zip' => 'required|min:3',
+          'details' => 'nullable',
+          'phone' => 'nullable',
+          'website' => 'nullable',
+          'email' => 'nullable',
+          'facebook' => 'nullable',
+          'twitter'=> 'nullable',
+          'google' => 'nullable'
+        ]));
 
         return redirect()->route('listing.edit', $listing);
     }
@@ -51,6 +70,7 @@ class ListingsController extends Controller
     public function show(Listing $listing)
     {
         //
+
     }
 
     /**
@@ -62,6 +82,7 @@ class ListingsController extends Controller
     public function edit(Listing $listing)
     {
         //
+        // return $listing;
         return view('User.dashboard.editlistings', compact('listing'));
     }
 

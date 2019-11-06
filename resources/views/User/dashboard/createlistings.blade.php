@@ -18,6 +18,21 @@
     </div>
   </div>
 
+  @if ($errors->any())
+    <div class="row">
+      <div class="notification error closeable">
+          <ul>
+            @foreach ($errors->all() as $error)
+            <li>
+              {{ $error }}
+            </li>
+          @endforeach
+          </ul>
+          <a class="close"></a>
+      </div>
+    </div>
+  @endif
+
   <div class="row">
     <div class="col-lg-12">
 
@@ -86,17 +101,10 @@
             <!-- Row -->
             <div class="row with-forms">
 
-              <!-- City -->
+              <!-- State -->
               <div class="col-md-6">
                 <h5>City</h5>
-                <select class="chosen-select-no-single" name="city">
-                  <option label="blank">Select City</option>
-                  <option>New Providence</option>
-                  <option>Abaco</option>
-                  <option>Freeport</option>
-                  <option>Andros</option>
-                  <option>Exuma</option>
-                </select>
+                <input type="text" name="city">
               </div>
 
               <!-- Address -->
@@ -108,7 +116,14 @@
               <!-- City -->
               <div class="col-md-6">
                 <h5>State</h5>
-                <input type="text" name="state">
+                <select class="chosen-select-no-single" name="state">
+                  <option label="blank">Select State</option>
+                  <option>New Providence</option>
+                  <option>Abaco</option>
+                  <option>Freeport</option>
+                  <option>Andros</option>
+                  <option>Exuma</option>
+                </select>
               </div>
 
               <!-- Zip-Code -->

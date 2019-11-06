@@ -24,3 +24,5 @@ Route::resource('listing', 'ListingsController');
 Route::get('/user/dashboard', function () {
   return view('User.dashboard.home');
 })->name('dashboard');
+
+Route::get('/testme', 'ListingsController@index');
